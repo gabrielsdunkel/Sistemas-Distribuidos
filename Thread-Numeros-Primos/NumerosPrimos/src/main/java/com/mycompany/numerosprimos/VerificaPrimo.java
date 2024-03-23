@@ -11,11 +11,10 @@ public class VerificaPrimo {
     public static class StaticVerificaPrimo {
         
         static List<String> strings;
-        
         //Ler cada linha do arquivo de texto
         public static void lerArquivo() throws IOException {
             Path path = Path.of("C:\\Users\\gacla\\Desktop\\Entrada01.txt");
-        
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\gacla\\Desktop\\Entrada01.txt"));
             strings = Files.readAllLines(path);
         
             for(String texto: strings){
@@ -23,29 +22,19 @@ public class VerificaPrimo {
             }
         }
         
-static boolean ehPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
+        public static boolean ehPrime(int number) {
+            if (number <= 1) {
                 return false;
             }
-        }
-        return true;
-    }
-
-    static boolean isPrime(int number) {
-        if (number <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-            if (number % i == 0) {
-                return false;
+            if (numbe == 2){
+                return true
             }
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
         }
-        return true;
-    }
-
     }
 }
